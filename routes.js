@@ -15,6 +15,22 @@ routes.get('/', function(req, res) {
   res.json(list)
 })
 
+routes.get('/:astronautID', function(req, res, next) {
+  const astronautID = req.params.astronautID
+  const i = list.findIndex(item => {
+    return item.astronautID === astronautID
+  })
+  if (i == -1) {
+    var err = new Error('Missing astronaut!');
+    err.status = 404;
+    next(err);
+  } else {
+    res.status = 200
+    res.json(list[i])
+  }
+})
+
+
 /*
   POST
   add astronaut
@@ -25,5 +41,7 @@ routes.post('/', function(req, res, next) {
   list.push(newAstronaut)
   res.json(newAstronaut)
 })
+
+
 
 module.exports = routes
