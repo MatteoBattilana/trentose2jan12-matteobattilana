@@ -1,0 +1,23 @@
+{
+  "name": "trentose2jan12-matteobattilana",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MatteoBattilana/trentose2jan12-matteobattilana.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MatteoBattilana/trentose2jan12-matteobattilana/issues"
+  },
+  "homepage": "https://github.com/MatteoBattilana/trentose2jan12-matteobattilana#readme",
+  "dependencies": {
+    "express": "^4.16.2",
+    "node-fetch": "^1.7.3"
+  }
+}
