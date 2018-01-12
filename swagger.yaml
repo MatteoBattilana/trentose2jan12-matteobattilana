@@ -89,7 +89,7 @@ paths:
           description: astronaut
           required: true
           schema:
-            $ref: '#/definitions/Astronauts'
+            $ref: '#/definitions/NewAstronaut'
       responses:
         202:
           description: astronaut update response
