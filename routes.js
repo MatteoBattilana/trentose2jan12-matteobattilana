@@ -30,6 +30,20 @@ routes.get('/:astronautID', function(req, res, next) {
   }
 })
 
+routes.get('/search/:astronautLastName', function(req, res, next) {
+  const astronautLastName = req.params.astronautLastName
+  const i = list.findIndex(item => {
+    return (item.lastName.indexOf(astronautLastName) > -1)
+  })
+  if (i == -1) {
+    var err = new Error('Missing astronaut!');
+    err.status = 404;
+    next(err);
+  } else {
+    res.status = 200
+    res.json(list[i])
+  }
+})
 
 /*
   POST
