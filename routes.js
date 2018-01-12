@@ -42,6 +42,26 @@ routes.post('/', function(req, res, next) {
   res.json(newAstronaut)
 })
 
+/*
+  PUT
+*/
+routes.put('/:astronautID', function(req, res, next) {
+  const astronautID = req.params.astronautID
+  const i = list.findIndex(item => {
+    return item.astronautID === astronautID
+  })
+  if (i == -1) {
+    var err = new Error('Missing astronaut!');
+    err.status = 404;
+    next(err);
+  } else {
+    list[i] = req.body
+    list[i].astronautID = astronautID
+    res.json(list[i])
+  }
+
+})
+
 
 
 module.exports = routes
